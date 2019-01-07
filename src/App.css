@@ -1,0 +1,24 @@
+.banner-image {
+    max-width: 100%;
+}
+
+.row.full-width {
+  max-width: 100%;
+}
+
+.search-deals {
+  padding: 25px;
+}
+
+.search-input {
+  border-radius: 50px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
