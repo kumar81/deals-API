@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
 import Deals from './components/deal_list';
-import Heading from './components/headling';
+import Heading from './components/heading';
 import SearchBar from './components/search_bar';
 import './App.css';
 

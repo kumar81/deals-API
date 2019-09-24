@@ -3,7 +3,7 @@ class Deals extends React.Component {
 
   renderList() {
     return this.props.products.map((n) => {
-      const url = 'http://dev-deals-api.pantheonsite.io/'+ n.field_deals_im;
+      const url = 'http://dev-deals-api.pantheonsite.io/'+ n.field_image;
       return (
         <div className='column' key={n.title}>
           <div className='callout text-center'>

@@ -7,9 +7,5 @@
 }
 
 .search-deals {
-  padding: 25px;
-}
-
-.search-input {
-  border-radius: 50px;
+  margin: 10px !important;
 }
