@@ -15,27 +15,28 @@ const styles = {
 };
 const currencies = [
 	{
-	  value: 'USD',
-	  label: 'usd',
+		label: 'USD',
+	  	value: 'usd',
 	},
 	{
-	  value: 'EUR',
-	  label: 'eur',
+		label: 'EUR',
+		value: 'eur',
 	},
 	{
-	  value: 'BTC',
-	  label: 'btc',
+		label: 'BTC',
+		value: 'btc',
 	},
 	{
-	  value: 'JPY',
-	  label: 'jpy',
+		label: 'JPY',
+		value: 'jpy',
 	},
 ];
 class SearchBar extends React.Component {
-  constructor (props) {
+	constructor (props) {
     super(props);
 	this.state = {
 		searchterm: '',
+		value: '',
 	};
   }
   render() {
@@ -56,7 +57,23 @@ class SearchBar extends React.Component {
 				select
 				className={classes.dealsRoot}
 				label='Budget'
-
+				onChange={this.onHandleChange}
+				value={this.state.value}
+			>
+				{currencies.map(option => (
+          			<MenuItem key={option.value} value={option.value}>
+            			{option.label}
+          			</MenuItem>
+        		))}
+			</TextField>
+		</Grid>
+		<Grid item xs={12} sm={6} lg={3}>
+			<TextField
+				select
+				className={classes.dealsRoot}
+				label='Activity'
+				onChange={this.onHandleChange}
+				value={this.state.value}
 			>
 				{currencies.map(option => (
           			<MenuItem key={option.value} value={option.value}>
@@ -78,9 +95,14 @@ class SearchBar extends React.Component {
     );
   }
 
-  onInputChange(term) {
-    this.setState({term});
-    this.props.onSearchTermName(term);
-  }
+	onInputChange(term) {
+    	this.setState({term});
+    	this.props.onSearchTermName(term);
+  	}
+  	onHandleChange = (event) => {
+		this.setState({
+			value: event.target.value
+		});
+  	}
 }
 export default withStyles(styles)(SearchBar);
