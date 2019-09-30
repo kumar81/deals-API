@@ -1,38 +1,62 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import { withStyles } from "@material-ui/core/styles";
+const styles = muiBaseTheme => ({
+	footer_menu_link: {
+	  backgroundColor: "#ebebeb",
+	},
+  });
 
-class Footer extends React.Component{
-
-  render() {
-    return (
-      <div className='callout large secondary'>
-        <div className='row'>
-          <div className='large-4 columns'>
-            <h5>Vivamus Hendrerit Arcu Sed Erat Molestie</h5>
-            <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas
-                est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                per inceptos himenaeos. Sed molestie augue sit.</p>
-
-          </div>
-          <div className='large-3 large-offset-2 columns'>
-            <ul className='menu vertical'>
-              <li><a href='https://deals-api-77065.firebaseapp.com'>One</a></li>
-              <li><a href='https://deals-api-77065.firebaseapp.com'>Two</a></li>
-              <li><a href='https://deals-api-77065.firebaseapp.com'>Three</a></li>
-              <li><a href='https://deals-api-77065.firebaseapp.com'>Four</a></li>
-            </ul>
-          </div>
-          <div className='large-3 columns'>
-            <ul className='menu vertical'>
-              <li><a href='https://deals-api-77065.firebaseapp.com/'>One</a></li>
-              <li><a href='https://deals-api-77065.firebaseapp.com/'>Two</a></li>
-              <li><a href='https://deals-api-77065.firebaseapp.com/'>Three</a></li>
-              <li><a href='https://deals-api-77065.firebaseapp.com/'>Four</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    );
-  }
+function Footer({ classes }) {
+	return (
+		<Grid container alignItems='baseline' style={{maxWidth:'75rem', margin:'30px auto', width: '100%', padding: '10px 20px', backgroundColor:'#ebebeb'}}>
+		<Grid item xs={12} sm={8} lg={4}>
+			<Paper elevation={0} className={classes.footer_menu_link}>
+			<Typography component='h3' variant='h5'>
+				Deals API
+			</Typography>
+			<Typography component='p'>
+				Build an API that you can query sending multiple parameters (e.g. destination, budget, type of activity) so we present relevant deals based on customers behaviour.
+			</Typography>
+			</Paper>
+		</Grid>
+		<Grid item xs={12} sm={8} lg={4}>
+			<Paper elevation={0} className={classes.footer_menu_link}>
+			<MenuList>
+				<MenuItem>
+				<Link href='' className=''>One</Link>
+				</MenuItem>
+				<MenuItem>
+				<Link href='' className=''>Two</Link>
+				</MenuItem>
+				<MenuItem>
+				<Link href='' className=''>Three</Link>
+				</MenuItem>
+			</MenuList>
+			</Paper>
+		</Grid>
+		<Grid item xs={12} sm={8} lg={4}>
+			<Paper className={classes.footer_menu_link} elevation={0}>
+			<MenuList>
+				<MenuItem>
+				<Link href='' className=''>One</Link>
+				</MenuItem>
+				<MenuItem>
+				<Link href='' className=''>Two</Link>
+				</MenuItem>
+				<MenuItem>
+				<Link href='' className=''>Three</Link>
+				</MenuItem>
+			</MenuList>
+			</Paper>
+		</Grid>
+		</Grid>
+	);
 }
 
-export default Footer;
+export default withStyles(styles)(Footer);

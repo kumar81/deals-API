@@ -1,26 +1,42 @@
 import React from 'react';
-class Deals extends React.Component {
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+import Typography from '@material-ui/core/Typography';
 
-  renderList() {
-    return this.props.products.map((n) => {
-      const url = 'http://dev-deals-api.pantheonsite.io/'+ n.field_image;
-      return (
-        <div className='column' key={n.title}>
-          <div className='callout text-center'>
-            <p><img src={url} onClick={this.handleClick} alt='hackday' /></p>
-            <p className='lead'> {n.title}</p>
-            <p className='subheader'>{n.body}</p>
-          </div>
-        </div>
-      );
+class Deals extends React.Component {
+	renderList() {
+    	return this.props.products.map((n) => {
+      	const url = 'http://dev-deals-api.pantheonsite.io/'+ n.field_image;
+      	return (
+			<Grid key={n.title} item xs={12} sm={8} lg={4}>
+				<div style={{padding:20}} >
+					<Paper style={{padding:20}} >
+						<Card elevation={0}>
+							<CardMedia
+								image={url}
+								style={{paddingTop:'87%'}}
+							/>
+						</Card>
+						<Typography component='p' variant='h6' style={{textAlign:'center', paddingTop:5}}>
+							{n.title}
+						</Typography>
+						<Typography component='p' style={{textAlign:'center', paddingTop:5}}>
+							{n.body}
+						</Typography>
+					</Paper>
+				</div>
+			</Grid>
+      	);
     })
   }
 
   render() {
-    return (
-      <div className='row small-up-1 medium-up-2 large-up-3'>
-        {this.renderList()}
-      </div>
+	return (
+		<Grid container style={ {maxWidth:'75rem', margin:'30px auto', width: '100%'} }>
+			{this.renderList()}
+		</Grid>
     );
   }
 }
