@@ -14,7 +14,7 @@ const styles = muiBaseTheme => ({
 
 function Footer({ classes }) {
 	return (
-		<Grid container alignItems='baseline' style={{maxWidth:'75rem', margin:'30px auto', width: '100%', padding: '10px 20px', backgroundColor:'#ebebeb'}}>
+		<Grid container alignItems='baseline' style={{margin:'30px auto', width: '100%', padding: '15px 0px 0px 60px', backgroundColor:'#ebebeb'}}>
 		<Grid item xs={12} sm={8} lg={4}>
 			<Paper elevation={0} className={classes.footer_menu_link}>
 			<Typography component='h3' variant='h5'>
