@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
+
 
 class Deals extends React.Component {
 	renderList() {
@@ -14,10 +16,12 @@ class Deals extends React.Component {
 				<div style={{padding:20}} >
 					<Paper style={{padding:20}} >
 						<Card elevation={0}>
-							<CardMedia
-								image={url}
-								style={{paddingTop:'87%'}}
-							/>
+							<Link to={n.field_link}>
+								<CardMedia
+									image={url}
+									style={{paddingTop:'87%'}}
+								/>
+							</Link>
 						</Card>
 						<Typography component='p' variant='h6' style={{textAlign:'center', paddingTop:5}}>
 							{n.title}
