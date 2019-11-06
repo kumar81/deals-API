@@ -10,13 +10,13 @@ import { Link } from "react-router-dom";
 class Deals extends React.Component {
 	renderList() {
     	return this.props.products.map((n) => {
-      	const url = 'http://dev-deals-api.pantheonsite.io/'+ n.field_image;
+      	const url = 'https://dev-deals-api.pantheonsite.io/'+ n.field_image;
       	return (
 			<Grid key={n.title} item xs={12} sm={8} lg={4}>
 				<div style={{padding:20}} >
 					<Paper style={{padding:20}} >
 						<Card elevation={0}>
-							<Link to={n.field_link}>
+							<Link to={'deals/' + n.title.replace(/\s+/g, '-').toLowerCase()}>
 								<CardMedia
 									image={url}
 									style={{paddingTop:'87%'}}

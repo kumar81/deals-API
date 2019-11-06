@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './home';
-import Dashboard from './components/dashboard';
+import DealDetailPage from './components/dealdetailpage';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const routing = (
     <Router>
         <Switch>
-            <Route path='/deals' component={Dashboard} />
+            <Route exact path='/deals/:specificDeals' component={DealDetailPage} />
             <Route exact path='/' component={Home} />
         </Switch>
     </Router>

@@ -1,3 +1,7 @@
 .search-deals {
   margin: 10px !important;
 }
+
+.slick-slider .slick-next {
+  right: 0px;
+}
