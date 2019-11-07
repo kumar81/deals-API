@@ -59,7 +59,13 @@ class DealProductListinf extends Component {
 						</div>
 					)
 				})
-				this.setState({ dProductTitle:title, dProductImage: image[0].props.children, dProductBody: body, dProductDestination: destination, dProductDealType: dealType })
+				this.setState({
+					dProductTitle:title,
+					dProductImage: image[0] ? image[0].props.children: image,
+					dProductBody: body,
+					dProductDestination: destination,
+					dProductDealType: dealType
+				})
 			});
 		}
 	  }
