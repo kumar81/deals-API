@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './components/header';
-import Footer from './components/footer';
 import Deals from './components/deal_list';
 import Heading from './components/heading';
 import SearchBar from './components/search_bar';
@@ -42,7 +41,6 @@ class App extends Component {
 				<SearchBar onSearchTermName = {searchterm =>this.searchdealsdata(searchterm)} products = {this.state.products}/>
 				<Heading />
 				<Deals products = {this.state.products} />
-				<Footer />
 			</div>
     	);
   	}
