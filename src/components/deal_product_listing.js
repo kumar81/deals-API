@@ -11,7 +11,7 @@ class DealProductListinf extends Component {
 		this.state ={
 			dProductTitle: [],
 			dProductBody: [],
-			dProductImage: '',
+			dProductImage: [],
 			dProductDestination: [],
 			dProductDealType:[],
 		}
@@ -69,7 +69,6 @@ class DealProductListinf extends Component {
 			});
 		}
 	  }
-
 
 	render() {
 		return (

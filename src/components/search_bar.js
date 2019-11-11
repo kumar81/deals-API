@@ -1,4 +1,5 @@
 import React from 'react';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -53,14 +54,15 @@ class SearchBar extends React.Component {
 		const activityList = this.acticitiesList();
 
 		return (
-			<Grid container style={ {alignItems: 'flex-end', justifyContent: 'space-between', maxWidth:'75rem', margin:'30px auto', padding: '10px 20px', width: '100%'} }>
+			<Grid container style={ {backgroundColor: 'lightgray', position: 'absolute', bottom: '10px', alignItems: 'flex-end', justifyContent: 'space-between', margin:'30px auto', padding: '10px 20px', width: '100%'} }>
 				<Grid item xs={12} sm={6} lg={3}>
-					<TextField
-						onChange={event => this.onInputChange(event.target.value)}
-						type='search'
-						className={classes.dealsRoot}
-						placeholder='Search destinations here'
-						InputProps={{ classes: { input: classes.searchInput } }}
+					<Autocomplete
+						options={currencies}
+						getOptionLabel={option => option.label}
+						className='autoCompeleteLable'
+						renderInput={params => (
+							<TextField {...params} label="Search destinations here" fullWidth />
+						)}
 					/>
 				</Grid>
 				<Grid item xs={12} sm={6} lg={3}>
@@ -106,10 +108,6 @@ class SearchBar extends React.Component {
 		);
   	}
 
-	onInputChange(term) {
-    	this.setState({term});
-    	this.props.onSearchTermName(term);
-  	}
   	onHandleChange = (event) => {
 		this.setState({
 			activity: event.target.value

@@ -5,3 +5,6 @@
 .slick-slider .slick-next {
   right: 0px;
 }
+.autoCompeleteLable .MuiInputBase-input {
+  width: 0 !important;
+}
