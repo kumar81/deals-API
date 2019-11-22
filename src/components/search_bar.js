@@ -54,6 +54,7 @@ class SearchBar extends React.Component {
 		const activityList = this.acticitiesList();
 
 		return (
+			<form>
 			<Grid container style={ {backgroundColor: 'lightgray', position: 'absolute', bottom: '10px', alignItems: 'flex-end', justifyContent: 'space-between', margin:'30px auto', padding: '10px 20px', width: '100%'} }>
 				<Grid item xs={12} sm={6} lg={3}>
 					<Autocomplete
@@ -75,7 +76,7 @@ class SearchBar extends React.Component {
 					>
 						{activityList.map(al => (
 							<MenuItem key={ "" + al} value={ "" + al }>
-								{al}
+								<span style={{color:'black'}} dangerouslySetInnerHTML={{ __html:al}}></span>
 							</MenuItem>
 						))}
 					</TextField>
@@ -90,7 +91,7 @@ class SearchBar extends React.Component {
 					>
 						{currencies.map(option => (
 							<MenuItem key={option.value} value={option.value}>
-								{option.label}
+								<span style={{color:'black'}}>{option.label}</span>
 							</MenuItem>
 						))}
 					</TextField>
@@ -105,6 +106,7 @@ class SearchBar extends React.Component {
 					</Button>
 				</Grid>
 			</Grid>
+			</form>
 		);
   	}
 
